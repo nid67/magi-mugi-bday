@@ -1,0 +1,7 @@
+Mugi Photos/
+new images/
+new images 2.0/
+venv/
+*.pdf
+website/node_modules/
+website/dist/
