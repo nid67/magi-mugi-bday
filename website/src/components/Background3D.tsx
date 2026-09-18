@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -8,7 +8,9 @@ function Particles({ phase }: { phase: string }) {
   
   const dummy = useMemo(() => new THREE.Object3D(), []);
   
-  const particles = useMemo(() => {
+  const [particles, setParticles] = useState<any[]>([]);
+
+  useEffect(() => {
     const temp = [];
     for (let i = 0; i < count; i++) {
       const t = Math.random() * 100;
@@ -19,7 +21,7 @@ function Particles({ phase }: { phase: string }) {
       const zFactor = -50 + Math.random() * 100;
       temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });
     }
-    return temp;
+    setParticles(temp);
   }, [count]);
 
   useFrame(() => {
