@@ -6,11 +6,15 @@ import PhotoReveal from './PhotoReveal';
 import GamerUI from './GamerUI';
 import PhotoArchive from './PhotoArchive';
 import TreasureNote from './TreasureNote';
+import SystemNotification from './SystemNotification';
+import LevelUpFlash from './LevelUpFlash';
+import CornerBracket from './CornerBracket';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function MainExperience() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const finalRevealRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // Refresh ScrollTrigger after component mounts and images load
@@ -25,7 +29,8 @@ export default function MainExperience() {
       <div className="h-[10vh]"></div>
 
       {/* LEVEL 01: The Beginning (Family/Support) */}
-      <section className="min-h-screen py-24 px-4 md:px-12 max-w-7xl mx-auto">
+      <section className="min-h-screen py-24 px-4 md:px-12 max-w-7xl mx-auto relative">
+        <SystemNotification message="[SYSTEM] New Quest Available" delay={0.5} />
         <SectionTitle level="01" title="The Beginning" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mt-16">
           <PhotoReveal src="/assets/images/all/1000024778.jpg" alt="Mugi and Brother" />
@@ -122,16 +127,18 @@ export default function MainExperience() {
       </section>
 
       {/* FINAL REVEAL */}
-      <section className="min-h-screen flex flex-col items-center justify-center py-32 px-4 relative overflow-hidden">
+      <section ref={finalRevealRef} className="min-h-screen flex flex-col items-center justify-center py-32 px-4 relative overflow-hidden">
+        <LevelUpFlash triggerRef={finalRevealRef as React.RefObject<HTMLElement>} />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-red-950/20 pointer-events-none"></div>
         
         <div className="text-center relative z-10 w-full max-w-5xl mx-auto">
           {/* Main Hero Shot */}
-          <div className="w-full max-w-3xl mx-auto mb-16 px-4">
+          <div className="w-full max-w-3xl mx-auto mb-16 px-4 relative">
+             <CornerBracket />
              <PhotoReveal 
               src="/assets/images/all/1000047998.jpg" 
               alt="Final Reveal Car Top" 
-              className="w-full h-auto rounded-none border border-red-500/30 shadow-[0_0_50px_rgba(255,0,0,0.15)]"
+              className="w-full h-auto rounded-none shadow-[0_0_50px_rgba(255,0,0,0.15)] relative z-10"
             />
           </div>
 

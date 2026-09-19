@@ -30,13 +30,13 @@ export default function PhotoReveal({ src, alt, className = "", delay = 0, paral
           y: 0, 
           scale: 1, 
           filter: 'blur(0px)',
-          duration: 1.2, 
+          duration: 1.5, 
           delay: delay,
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
             start: "top 85%",
-            toggleActions: "play none none reverse"
+            once: true
           }
         }
       );
