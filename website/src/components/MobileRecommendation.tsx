@@ -4,7 +4,7 @@ export default function MobileRecommendation({ onDismiss }: { onDismiss: () => v
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-6 text-center">
       <div className="system-panel max-w-sm w-full p-8 rounded-xl border border-red-500/30 flex flex-col items-center">
-        <h2 className="text-3xl font-bold font-mono text-red-500 mb-2">WAIT, MUGI. 👀</h2>
+        <h2 className="text-3xl font-bold font-mono text-red-500 mb-2">WAIT, MAGI & MUGI. 👀</h2>
         <p className="text-gray-300 font-sans mb-6 text-sm">
           Are you really going to experience this entire thing on that tiny screen?
         </p>

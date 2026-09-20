@@ -67,9 +67,9 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
         <div className="absolute flex flex-col items-center">
           <h1 
             ref={mugiTitleRef} 
-            className="opacity-0 scale-150 font-sans font-black text-6xl md:text-9xl text-white tracking-[0.2em] uppercase glitch-text mb-2"
+            className="opacity-0 scale-150 font-sans font-black text-6xl md:text-8xl text-white tracking-[0.1em] uppercase glitch-text mb-2"
           >
-            MUGI
+            MAGI & MUGI
           </h1>
           <h2 
             ref={levelTitleRef}
@@ -82,7 +82,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
             ref={bdayRef}
             className="opacity-0 font-sans font-bold text-xl md:text-3xl text-gray-400 tracking-widest uppercase mt-24"
           >
-            Happy Birthday Mugi 🎂🔥
+            Happy Birthday Magi & Mugi 🎂🔥
           </h3>
         </div>
       </div>
